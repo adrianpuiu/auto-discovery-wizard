@@ -5,6 +5,7 @@ import { Badge } from '@/components/ui/badge';
 import { Progress } from '@/components/ui/progress';
 import { Separator } from '@/components/ui/separator';
 import { CheckCircle, Clock, Users, Zap, TrendingUp, Phone, Calendar, Mail, MessageSquare, BarChart3, Settings, ArrowRight, Star, Timer, DollarSign } from 'lucide-react';
+import { toast } from 'sonner';
 
 const Index = () => {
   const [currentStep, setCurrentStep] = useState(0);
@@ -486,6 +487,12 @@ const Index = () => {
                             <Button 
                               className="w-full bg-white text-blue-600 hover:bg-blue-50"
                               size="lg"
+                              onClick={() => {
+                                toast.success('Great! Your custom plan is being prepared. We\'ll contact you shortly!', {
+                                  description: 'Check your email for your personalized automation roadmap.',
+                                  duration: 5000,
+                                });
+                              }}
                             >
                               Get My Custom Plan
                               <ArrowRight className="w-4 h-4 ml-2" />
@@ -494,6 +501,12 @@ const Index = () => {
                               variant="outline" 
                               className="w-full border-white text-white hover:bg-white/10"
                               size="lg"
+                              onClick={() => {
+                                toast.success('Consultation request received!', {
+                                  description: 'Our team will reach out within 24 hours to schedule your free consultation.',
+                                  duration: 5000,
+                                });
+                              }}
                             >
                               Schedule Free Consultation
                               <Phone className="w-4 h-4 ml-2" />
